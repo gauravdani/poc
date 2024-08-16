@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "mlflow-poc-kaggle"
+version = "0.1.0"
+description = ""
+authors = ["gaurav.dani <gaurav.dani@joyn.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mlflow = "^2.15.1"
+pandas = "^2.2.2"
+scikit-learn = "^1.5.1"
+kaggle = "^1.6.17"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
