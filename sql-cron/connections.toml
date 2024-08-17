@@ -1,0 +1,7 @@
+[default]
+account = "myaccount"
+user = "jdoe-test"
+password = "******"
+warehouse = "my-test_wh"
+database = "my_test_db"
+schema = "my_schema"
