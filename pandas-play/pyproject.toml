@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "pandas-play"
+version = "0.1.0"
+description = ""
+authors = ["gaurav.dani <gaurav.dani@joyn.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2.2"
+jupyter = "^1.0.0"
+matplotlib = "^3.9.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
