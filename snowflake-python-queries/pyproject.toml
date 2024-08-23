@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "snowflake-python-queries"
+version = "0.1.0"
+description = ""
+authors = ["gaurav.dani <gaurav.dani@joyn.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+snowflake-connector-python = "^3.12.1"
+pandas = "^2.2.2"
+jupyter = "^1.0.0"
+matplotlib = "^3.9.2"
+duckdb = "^1.0.0"
+jupyter-contrib-nbextensions = "^0.7.0"
+sqlalchemy = "^2.0.32"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
