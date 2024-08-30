@@ -1,0 +1,12 @@
+with vv_data as (
+select user_id , sum (total_duration_sec ) as duration from joyn_snow.im.video_views_epg_extended
+where device_platform ='ott' and user_id like 'JNDE%' and base_date > CURRENT_DATE - INTERVAL '7 DAYS' 
+group by 1
+having duration >= 14400),
+consent_data as (
+   select record_content:user_id as user_id, record_content:amazon_audiences,record_content:google_enhanced_audiences,record_content:meta_custom_audiences,record_content:google_ads_audiences, record_content:device_platform
+   from joyn_snow.kafka.prd_consent_updated_v1 where record_content:ingestion_time::date > current_date - interval ' 7 days' and record_content:device_platform::string = 'ott'
+)
+select  distinct a.*,b.*,c.* from vv_data a inner join consent_data b on a.user_id = b.user_id
+inner join playground.hightouch_test.user_profiles_f c on a.user_id = c.user_id and c.amazon_audiences = true;
+
