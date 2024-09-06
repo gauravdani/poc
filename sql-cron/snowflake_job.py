@@ -58,27 +58,6 @@ def execute_snowflake_query():
         # Clean up
         cs.close()
         ctx.close()
-    
-    try:
-        # Execute a SQL query
-        # Open and read the SQL file
-        with open('verify_query.sql', 'r') as file:
-            sql_query = file.read()
-
-        print (sql_query)
-
-        cs.execute(sql_query)
-
-        # Fetch the result set
-        one_row = cs.fetchone()
-
-        # Print the result
-        print(f"Output: {one_row}")
-        
-    finally:
-        # Clean up
-        cs.close()
-        ctx.close()
 
 if __name__ == "__main__":
     execute_snowflake_query()
