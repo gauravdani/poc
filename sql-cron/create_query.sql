@@ -31,6 +31,7 @@ consent_data AS (
     joyn_snow.kafka.prd_consent_updated_v1 
   WHERE 
     RECORD_CONTENT : ingestion_time :: DATE > '2024-06-30'
+    and (record_content:url::string IS NULL OR record_content:url::string not like '%7pass%')
   QUALIFY ROW_NUMBER() OVER (
                 PARTITION BY user_id
                 ORDER BY
