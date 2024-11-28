@@ -26,7 +26,9 @@ consent_data AS (
     RECORD_CONTENT : google_enhanced_audiences :: BOOLEAN AS google_enhanced_audiences, 
     RECORD_CONTENT : hightouch :: BOOLEAN AS hightouch, 
     RECORD_CONTENT : meta_custom_audiences :: BOOLEAN AS meta_custom_audiences,
-    RECORD_CONTENT : ingestion_time :: DATE as ingestion_time
+    RECORD_CONTENT : ingestion_time :: DATE as ingestion_time,
+    RECORD_CONTENT : device_platform :: string as device_platform,
+    RECORD_CONTENT : device_platform :: string as device_type
   FROM 
     joyn_snow.kafka.prd_consent_updated_v1 
   WHERE 
